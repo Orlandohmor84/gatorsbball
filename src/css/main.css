@@ -1,0 +1,49 @@
+/* ==========================================================================
+   Custom Stylesheet for Florida Gator's Men's Basketball Web App
+   Version: 0.0 Beta
+   Author: Orlando Morales, ibuildweb.site
+   Last Modification Date: 11/27/2016
+   
+   Table of Content
+   	- Global
+   	- Header
+   	- Footer
+   	- Media Queries
+   ========================================================================== */
+/*----- Global ------*/
+	body {
+    	padding-top: 50px;
+        padding-bottom: 20px;
+    }  
+    h2 {
+    	color: blue;
+    }
+/*----- Header ------*/
+   a.navbar-brand strong {
+   	color: blue;
+   	text-shadow: 0.5px 0.5px 0.2px #ccc;
+   	font-size: 125%;
+   }
+/*----- Footer ------*/
+	footer img {
+   	width: 200px;
+   	margin: 10px auto;
+	}
+/*----- Media Queries ------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
