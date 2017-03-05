@@ -2,7 +2,7 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" data-ng-app="gatorhubApp"> <!--<![endif]-->
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -22,6 +22,10 @@
         <link rel="stylesheet" href="css/main.css">
 
         <script src="vendor/modernizr/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+        <script src="vendor/angular-1.5.8/angular.min.js"></script>
+        <script src="vendor/angular-1.5.8/angular-route.min.js"></script>
+        <script src="js/app.js"></script>
+        
     </head>
     <body>
         <!--[if lt IE 8]>
@@ -39,6 +43,11 @@
           		  <a class="navbar-brand" href="#"><strong>GatorHub</strong> Men's Basketball</a>
         	    </div><!-- /.navbar-header -->
         		<div id="navbar" class="navbar-collapse collapse">
+        			<ul class="navbar-nav">
+        				<li><a href="#home">Home</a></li>
+        				<li><a href="#scores">Scores</a></li>
+        				<li><a href="#stats">Stats</a></li>
+        			</ul>
           	  	<form class="navbar-form navbar-right" role="form">
             			<div class="form-group">
               		  	<input type="text" placeholder="Email" class="form-control">
@@ -51,354 +60,38 @@
         		</div><!--/.navbar-collapse -->
             </div><!-- /.container -->
     	</nav>
+    
+    	<div data-ng-view></div>
 
-        <!-- Main jumbotron for a primary marketing message or call to action -->
-    	<div class="jumbotron">
-    		<div class="container">	
-        		<h1>Florida Gators</h1>
-        		<h2>2016-2017 Men's Basketball</h2>
-        		<p>Your hub for everything Florida Gators basketball. Schedule, scores, stats, news, and more.</p>
-        		<p><a class="btn btn-primary btn-lg" href="#schedule" role="button">See Schedule/Scores &raquo;</a></p>
-    		</div><!-- /.container -->
-    	</div><!-- /.jumbotron -->
+        
     
     	<div class="container">
-    		<section id="schedule">
-    			<table class="table table-striped">
-    				<tr>
-    					<th>Date</th>
-    					<th>Time</th>
-    					<th>TV</th>
-    					<th>Opponent</th>
-    					<th>Score</th>
-    					<th>Result</th>
-    					<th>Record</th>
-    				</tr>
-    				<tr>
-        	    		<td>11/11/16</td>
-         	   		<td>7:30 PM</td>
-          	  		<td>SECN</td>
-           	 		<td>FGCU(0-0)*</td>
-            			<td>80-59</td>
-            			<td>W</td>
-            			<td>1-0</td>
-        			</tr>
-        			<tr>
-           	 		<td>11/13/16</td>
-            			<td>8:00 PM</td>
-            			<td>ESPNU</td>
-            			<td>Mercer(1-0)*</td>
-            			<td>76-54</td>
-            			<td>W</td>
-            			<td>2-0</td>
-        			</tr>
-        			<tr>
-           	 		<td>11/17/16</td>
-            			<td>7:00 PM</td>
-            			<td>SECN</td>
-            			<td>St. Bonaventure(1-0)**</td>
-            			<td>73-66</td>
-            			<td>W</td>
-            			<td>3-0</td>
-        			</tr>
-    				<tr>
-        	    		<td>11/21/16</td>
-         	   		<td>7:00 PM</td>
-          	  		<td>SECN</td>
-           	 		<td>Belmont(1-1)***</td>
-            			<td>78-61</td>
-            			<td>W</td>
-            			<td>4-0</td>
-        			</tr>
-        			<tr>
-           	 		<td>11/24/16</td>
-            			<td>8:30 PM</td>
-            			<td>ESPN2</td>
-            			<td>Seton Hall(3-0)<sup>AI</sup></td>
-            			<td>81-76</td>
-            			<td>W</td>
-            			<td>5-0</td>
-        			</tr>
-        			<tr>
-           	 		<td>11/25/16</td>
-            			<td>9:30 PM</td>
-            			<td>ESPNU</td>
-            			<td><sup>#11</sup>Gonzaga(4-0)<sup>AI</sup></td>
-            			<td>72-77</td>
-            			<td>L</td>
-            			<td>5-1</td>
-        			</tr>
-        			<tr>
-           	 		<td>11/25/16*</td>
-            			<td>4:30 PM</td>
-            			<td>ESPN2</td>
-            			<td>Miami(4-1)<sup>AI</sup></td>
-            			<td>65-56</td>
-            			<td>W</td>
-            			<td>6-1</td>
-        			</tr>
-        		<tr>
-            		<td>12/1/16</td>
-            		<td>7:00 PM</td>
-            		<td>ESPN3</td>
-            		<td>&#64;North Florida(3-5)</td>
-            		<td>91-60</td>
-            		<td>W</td>
-            		<td>7-1</td>
-        		</tr>
-        		<tr>
-            		<td>12/6/16</td>
-            		<td>9:00 PM</td>
-            		<td>ESPN</td>
-            		<td><sup>#5</sup>Duke(8-1)<sup>V</sup></td>
-            		<td>74-84</td>
-            		<td>L</td>
-            		<td>7-2</td>
-        		</tr>
-        		<tr>
-            		<td>12/11/16</td>
-            		<td>4:00 PM</td>
-            		<td>ESPNU</td>
-            		<td>&#64;FSU(9-1)</td>
-            		<td>78-83</td>
-            		<td>L</td>
-            		<td>7-3</td>
-        		</tr>
-        		<tr>
-            		<td>12/17/16</td>
-            		<td>4:00 PM</td>
-            		<td>FS2</td>
-            		<td>Charlotte(6-3)<sup>O</sup></td>
-            		<td>87-46</td>
-            		<td>W</td>
-            		<td>8-3</td>
-        		</tr>
-        		<tr>
-            		<td>12/21/16</td>
-            		<td>7:00 PM</td>	
-            		<td>SECN</td>
-            		<td>Little Rock(9-3)</td>
-            		<td>94-71</td>
-            		<td>W</td>
-            		<td>9-3</td>	
-        		</tr>
-        		<tr>
-            		<td>12/29/16</td>
-            		<td>9:00 PM</td>
-            		<td>SECN</td>
-            		<td>&#64;Arkansas(11-1)</td>
-            		<td>81-72</td>
-            		<td>W</td>
-            		<td>10-3(1-0)</td>
-        		</tr>
-        		<tr>
-            		<td>1/3/17</td>
-            		<td>7:00 PM</td>
-            		<td>ESPNU</td>
-            		<td>Ole Miss(9-4)</td>
-            		<td>70-63</td>
-            		<td>W</td>
-            		<td>11-3(2-0)</td>
-        		</tr>
-        		<tr>
-            		<td>1/7/17</td>
-            		<td>5:15</td>
-            		<td>ESPN2</td>
-            		<td>Tennessee(8-6)</td>
-            		<td>83-70</td>
-            		<td>W</td>
-            		<td>12-3(3-0)</td>
-        		</tr>
-        		<tr>
-            		<td>1/10/17</td>
-            		<td>9:00 PM</td>
-            		<td>ESPNU</td>
-            		<td>&#64Alabama(9-5)</td>
-            		<td>80-67</td>
-            		<td>W</td>
-            		<td>13-3(4-0)</td>
-        		</tr>
-        		<tr>
-            		<td>1/14/17</td>
-            		<td>12:00 PM</td>
-            		<td>ESPN2</td>
-            		<td>Georgia(11-5)</td>
-            		<td>80-76(OT)</td>
-            		<td>W</td>
-            		<td>14-3(5-0)</td>
-        		</tr>
-        		<tr>
-            		<td>1/18/17</td>
-            		<td>6:30 PM</td>
-            		<td>SECN</td>
-            		<td>&#64;<sup>24</sup>South Carolina(14-3)</td>
-            		<td>53-57</td>
-            		<td>L</td>
-            		<td>14-4(5-1)</td>
-        		</tr>
-        		<tr>
-            		<td>1/21/17</td>
-            		<td>12:00 PM</td>
-            		<td>CBS</td>
-            		<td>Vanderbilt</td>
-            		<td></td>
-            		<td></td>
-            		<td></td>
-        		</tr>
-        		<tr>
-            		<td>1/25/17</td>
-            		<td>9:00 PM</td>
-            		<td>SECN</td>
-            		<td>&#64LSU</td>
-            		<td></td>
-            		<td></td>
-            		<td></td>
-        		</tr>
-        		<tr>
-            		<td>1/28/17</td>
-            		<td>2:00 PM</td>
-            		<td>ESPN</td>
-            		<td>Oklahoma<sup>B12</sup></td>
-            		<td></td>
-            		<td></td>
-            		<td></td>
-        		</tr>
-        		<tr>
-            		<td>2/2/17</td>
-            		<td>7:00 PM</td>
-            		<td>ESPN2</td>
-            		<td>Missouri</td>
-            		<td></td>
-            		<td></td>
-            		<td></td>
-        		</tr>
-        		<tr>
-            		<td>2/4/17</td>
-            		<td>2/8:00 PM</td>
-            		<td>ESPN2</td>
-            		<td>Kentucky</td>
-            		<td></td>
-            		<td></td>
-            		<td></td>
-        		</tr>
-        		<tr>
-            		<td>2/7/17</td>
-            		<td>7:00 PM</td>
-            		<td>ESPN2</td>
-            		<td>@Georgia</td>
-            		<td></td>
-            		<td></td>
-            		<td></td>
-        		</tr>
-        		<tr>
-            		<td>2/11/17</td>
-            		<td>12:00 PM</td>
-            		<td>ESPN2</td>
-            		<td>Texas A&amp;M</td>
-            		<td></td>
-            		<td></td>
-            		<td></td>
-        		</tr>
-        		<tr>
-            		<td>2/14/17</td>
-            		<td>7:00 PM</td>
-            		<td>SECN</td>
-            		<td>&#64Auburn</td>
-            		<td></td>
-            		<td></td>
-            		<td></td>
-        		</tr>
-        		<tr>
-            		<td>2/18/17</td>
-            		<td>2:00 PM</td>
-            		<td>ESPN2</td>
-            		<td>&#64;Mississippi State</td>
-            		<td></td>
-            		<td></td>
-            		<td></td>
-        		</tr>
-        		<tr>
-            		<td>2/21/17</td>
-            		<td>7:00 PM</td>
-            		<td>ESPN</td>
-            		<td>South Carolina</td>
-            		<td></td>
-            		<td></td>
-            		<td></td>
-        		</tr>
-        		<tr>
-            		<td>2/25/17</td>
-            		<td>2:00 PM</td>
-            		<td>CBS</td>
-            		<td>&#64;Kentucky</td>
-            		<td></td>
-            		<td></td>
-            		<td></td>
-        		</tr>
-        		<tr>
-            		<td>3/1/17</td>
-            		<td>7:00 PM</td>
-            		<td>ESPN</td>
-            		<td>Arkansas</td>
-            		<td></td>
-            		<td></td>
-            		<td></td>
-        		</tr>
-        		<tr>
-            		<td>3/4/17</td>
-            		<td>2:00 PM</td>
-            		<td>ESPN2</td>
-            		<td>&#64Vanderbilt</td>
-            		<td></td>
-            		<td></td>
-            		<td></td>
-        		</tr>
-        		<tr>
-            		<td>3/8 - 3/12/17</td>
-            		<td></td>
-            		<td></td>
-            		<td>SEC Tournament</td>
-            		<td></td>
-            		<td></td>
-            		<td></td>
-        		</tr>
-      	  </tbody>
-  	</table>
-  	<p>*In Jacksonville, FL<br>
-  		  **In Lakeland, FL<br>
-  		  ***In Tampa, FL<br>
-			<sup>AI</sup>Advocare Invitational<br>
-			<sup>V</sup>Jimmy V Classic<br>
-			<sup>O</sup>Metro PCS Orange Bowl Classic<br>
-			<sup>B12</sup>SEC/Big 12 Challenge presented by Sonic<br>
-		</p>
-  </section>
-
+    		
     
       <!-- Example row of columns -->
       <div class="row">
         <div class="col-xs-4">
           <h2>Stats</h2>
           <p>Team and player stats.</p>
-          <p><a class="btn btn-primary" href="#" role="button">Coming Soon!</a></p>
-        </div>
+          <p><a class="btn btn-primary" href="#stats" role="button">Coming Soon!</a></p>
+        </div><!-- /.col -->
         <div class="col-xs-4">
           <h2>News</h2>
           <p>Stay up to date with all the latest news, updates, and articles.</p>
-          <p><a class="btn btn-primary" href="#" role="button">Coming Soon!</a></p>
-       </div>
+          <p><a class="btn btn-primary" href="#news" role="button">Coming Soon!</a></p>
+       </div><!-- /.col -->
         <div class="col-xs-4">
           <h2>March Madness</h2>
           <p>The Gators journey to the tourney is already underway. Keep up to date on all the latest tournament news, bracket predictions, and bubble madness.</p>
-          <p><a class="btn btn-primary" href="#" role="button">Coming Soon!</a></p>
-        </div>
-      </div>
+          <p><a class="btn btn-primary" href="#march" role="button">Coming Soon!</a></p>
+        </div><!-- /.col -->
+      </div><!-- /.row -->
 
       <hr>
 
       <footer>
       	<center><img src="img/slam.gif"></center>
-          <p>&copy; 2016 <a href="http://ibuildweb.site" target="_blank">Orlando Morales</p>
+          <p>&copy; 2017 <a href="http://dev.ibuildweb.solutions" target="_blank">Orlando Morales</p>
       </footer>
     </div> <!-- /container -->        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="vendor/jquery/jquery-1.11.2.min.js"><\/script>')</script>
